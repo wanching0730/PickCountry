@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ArrayList<Country> countries = new ArrayList<Country>();
-        countries.add(new Country("Select a country"));
+        countries.add(new Country("Select a country", 0));
         countries.add(new Country("Malaysia", R.drawable.malaysia));
         countries.add(new Country("Korea", R.drawable.south_korea));
         countries.add(new Country("Argentina", R.drawable.argentina));
@@ -30,37 +30,32 @@ public class MainActivity extends AppCompatActivity {
         countries.add(new Country("United Kingdom", R.drawable.united_kingdom));
 
         customSpinner = (Spinner)findViewById(R.id.custom_spinner);
-        SpinnerAdapter adapter = new SpinnerAdapter(this, countries);
+        final SpinnerAdapter adapter = new SpinnerAdapter(this, countries);
         customSpinner.setAdapter(adapter);
         customSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
 
-                if(position == 0)
-                    return;
-                else{
-                    position -= 1;
-                }
-
-
                 switch (position){
                     case 0:
+                        return;
+                    case 1:
                         intent.setData(Uri.parse("geo:4.213155, 103.402914"));
                         break;
-                    case 1:
+                    case 2:
                         intent.setData(Uri.parse("geo:36.593562, 127.040436"));
                         break;
-                    case 2:
+                    case 3:
                         intent.setData(Uri.parse("geo:-34.883324, -65.140799"));
                         break;
-                    case 3:
+                    case 4:
                         intent.setData(Uri.parse("geo:-24.372645, 131.823709"));
                         break;
-                    case 4:
+                    case 5:
                         intent.setData(Uri.parse("geo:36.875761, 138.729092"));
                         break;
-                    case 5:
+                    case 6:
                         intent.setData(Uri.parse("geo:54.887410, -2.913750"));
                         break;
                 }
