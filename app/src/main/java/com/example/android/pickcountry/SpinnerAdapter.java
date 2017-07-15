@@ -26,7 +26,9 @@ public class SpinnerAdapter extends ArrayAdapter {
         View spinnerItem = convertView;
 
         if(spinnerItem == null){
-            spinnerItem = LayoutInflater.from(getContext()).inflate(R.layout.spinner_rows, parent, false);
+            LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(getContext().LAYOUT_INFLATER_SERVICE);
+            spinnerItem = inflater.inflate(R.layout.spinner_rows, parent, false);
+            //spinnerItem = LayoutInflater.from(getContext()).inflate(R.layout.spinner_rows, parent, false);
         }
 
         Country tempCountry = (Country) getItem(position);

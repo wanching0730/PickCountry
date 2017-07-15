@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ArrayList<Country> countries = new ArrayList<Country>();
-        countries.add(new Country("", R.drawable.tsumtsum));
-        countries.add(new Country("Malaysia", R.drawable.china));
+        countries.add(new Country("Malaysia", R.drawable.malaysia));
         countries.add(new Country("Korea", R.drawable.south_korea));
         countries.add(new Country("Argentina", R.drawable.argentina));
         countries.add(new Country("Australia", R.drawable.australia));
@@ -37,25 +36,22 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
 
                 switch (position){
-                    case 1:
+                    case 0:
                         intent.setData(Uri.parse("geo:4.213155, 103.402914"));
                         break;
-                    case 2:
+                    case 1:
                         intent.setData(Uri.parse("geo:36.593562, 127.040436"));
                         break;
-                    case 3:
+                    case 2:
                         intent.setData(Uri.parse("geo:-34.883324, -65.140799"));
                         break;
-                    case 4:
+                    case 3:
                         intent.setData(Uri.parse("geo:-24.372645, 131.823709"));
                         break;
-                    case 5:
-                        intent.setData(Uri.parse("geo:-34.883324, -65.140799"));
-                        break;
-                    case 6:
+                    case 4:
                         intent.setData(Uri.parse("geo:36.875761, 138.729092"));
                         break;
-                    case 7:
+                    case 5:
                         intent.setData(Uri.parse("geo:54.887410, -2.913750"));
                         break;
                 }
