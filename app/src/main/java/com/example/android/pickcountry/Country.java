@@ -3,7 +3,12 @@ package com.example.android.pickcountry;
 public class Country {
 
     private String countryName;
-    private int countryImage;
+    private static final int NO_IMAGE = -1;
+    private int countryImage = NO_IMAGE;
+
+    public Country(String countryName){
+        this.countryName = countryName;
+    }
 
     public Country(String countryName, int countryImage){
         this.countryName = countryName;
@@ -17,4 +22,6 @@ public class Country {
     public int getCountryImage(){
         return countryImage;
     }
+
+    public boolean checkImage(){ return countryImage != NO_IMAGE;}
 }

@@ -36,8 +36,12 @@ public class SpinnerAdapter extends ArrayAdapter {
         ImageView image = (ImageView) spinnerItem.findViewById(R.id.imageView);
         TextView text = (TextView) spinnerItem.findViewById(R.id.textView);
 
-        image.setImageResource(tempCountry.getCountryImage());
-        image.setVisibility(View.VISIBLE);
+        if(tempCountry.checkImage()){
+            image.setImageResource(tempCountry.getCountryImage());
+            image.setVisibility(View.VISIBLE);
+        }else
+            image.setVisibility(View.INVISIBLE);
+
         text.setText(tempCountry.getCountryName());
 
         return spinnerItem;

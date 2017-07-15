@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final ArrayList<Country> countries = new ArrayList<Country>();
+        countries.add(new Country("Select a country"));
         countries.add(new Country("Malaysia", R.drawable.malaysia));
         countries.add(new Country("Korea", R.drawable.south_korea));
         countries.add(new Country("Argentina", R.drawable.argentina));
@@ -34,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
+
+                if(position == 0)
+                    return;
+                else{
+                    position -= 1;
+                }
+
 
                 switch (position){
                     case 0:
@@ -63,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
     }
