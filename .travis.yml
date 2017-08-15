@@ -1,4 +1,5 @@
 sudo: false
+
 language: android
 jdk: oraclejdk8
 android:
@@ -22,8 +23,11 @@ android:
     # if you need to run emulator(s) during your tests
     #- sys-img-armeabi-v7a-android-23
 
+env:
+  global:
+    - ADB_INSTALL_TIMEOUT=8
 
-Emulator Management: Create, Start and Wait
+# Emulator Management: Create, Start and Wait
 # Re-enable this when we figure out how to reliably build on Travis
 before_script:
   - echo no | android create avd --force -n test -t android-25 --abi armeabi-v7a
