@@ -42,4 +42,4 @@ notifications:
           - wanchingggg97@gmail.com
 
 before_script:
-  - bash .travis-android-license-bugfix.sh
+  - bash fixbug.sh
