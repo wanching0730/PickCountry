@@ -40,8 +40,5 @@ notifications:
         recipients:
           - wanching_97@hotmail.com
           - wanchingggg97@gmail.com
-script:
-  set -e
-  set -x
-  rsync -avhp ./android-license/ "$ANDRROID_HOME/licenses/"
+
    
