@@ -42,4 +42,7 @@ notifications:
           - wanchingggg97@gmail.com
 
 before_script:
-  - bash fixbug.sh
+  - bash fixbug2.sh
+
+script:
+  - ./gradlew build connectedCheck
