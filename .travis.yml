@@ -41,4 +41,5 @@ notifications:
           - wanching_97@hotmail.com
           - wanchingggg97@gmail.com
 
-   
+before_script:
+  - bash .travis-android-license-bugfix.sh
